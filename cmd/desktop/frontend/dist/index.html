@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>HomeBred-RAG</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <aside id="sidebar">
+      <div class="brand">
+        <span class="brand-dot"></span>
+        <span>HomeBred-RAG</span>
+      </div>
+
+      <div class="section-label">Collections</div>
+      <ul id="collection-list"></ul>
+
+      <button id="new-collection-btn" class="btn btn-secondary">+ New collection</button>
+
+      <div id="new-collection-form" class="hidden">
+        <input id="new-collection-name" type="text" placeholder="Collection name" />
+        <div class="path-row">
+          <input id="new-collection-path" type="text" placeholder="Folder path" readonly />
+          <button id="browse-btn" class="btn btn-small">Browse…</button>
+        </div>
+        <div class="form-actions">
+          <button id="cancel-new-collection" class="btn btn-small btn-ghost">Cancel</button>
+          <button id="create-collection-btn" class="btn btn-small btn-primary">Index folder</button>
+        </div>
+        <div id="index-status" class="status-line"></div>
+      </div>
+
+      <div id="ocr-badge" class="badge hidden">OCR enabled — scanned PDFs &amp; images supported</div>
+    </aside>
+
+    <main id="main">
+      <header id="main-header">
+        <div>
+          <div id="active-collection-name">No collection selected</div>
+          <div id="active-collection-meta" class="muted"></div>
+        </div>
+        <button id="reindex-btn" class="btn btn-small btn-ghost hidden">Re-index</button>
+      </header>
+
+      <div id="conversation"></div>
+
+      <form id="ask-form">
+        <input id="question-input" type="text" placeholder="Ask a question about this collection…" autocomplete="off" />
+        <button id="ask-btn" type="submit" class="btn btn-primary">Ask</button>
+      </form>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
